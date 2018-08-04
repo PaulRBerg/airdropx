@@ -1,0 +1,24 @@
+{
+  "comments": false,
+  "presets": [
+    [
+      "env", {
+        "targets": {
+          "node": "6.11.5"
+        }
+    }
+    ]
+  ],
+  "plugins": [
+    "transform-async-to-bluebird",
+    "transform-promise-to-bluebird",
+    "transform-class-properties",
+    "transform-object-rest-spread",
+    [
+      "transform-runtime", {
+        "polyfill": false,
+        "regenerator": true
+      }
+    ]
+  ]
+}
