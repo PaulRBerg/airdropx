@@ -6,7 +6,12 @@ const express = require("express");
 const app = express();
 
 app.get("/" + functions.config().env.api_token, (req, res) => {
-	return db.collection("users").where("still_in_group", "==", req.query.still_in_group || true).get().then(snap => {
+	console.log("req.query.still_in_group", req.query.still_in_group);
+	let promise = typeof req.query.still_in_group !== "undefined"
+		? db.collection("users").where("still_in_group", "==", req.query.still_in_group).get()
+		: db.collection("users").get();
+
+	return promise.then(snap => {
 		if (snap.empty) {
 			return res.status(200).send("No users in the database.\n");
 		}
@@ -101,6 +106,7 @@ app.post("/" + functions.config().env.api_token + "/manage", (req, res) => {
 		})
 			.then(snap => {
 				console.log("User updated: ", snap);
+				return res.status(200).send("User updated");
 			})
 			.catch((err) => {
 				console.error("Error updating user: ", err);
