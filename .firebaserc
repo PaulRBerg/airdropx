@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "airdropx-967e7"
+    "default": "airdropx-967e7",
+    "production": "telegrambot-7d6e9"
   }
 }

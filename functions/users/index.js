@@ -5,8 +5,8 @@ const db = firebase.firestore();
 const express = require("express");
 const app = express();
 
-app.get("/" + functions.config().env.bot_token, (req, res) => {
-	return db.collection("users").where("still_in_group", "==", true).get().then(snap => {
+app.get("/" + functions.config().env.api_token, (req, res) => {
+	return db.collection("users").where("still_in_group", "==", req.query.still_in_group || true).get().then(snap => {
 		if (snap.empty) {
 			return res.status(200).send("No users in the database.\n");
 		}
@@ -26,7 +26,7 @@ app.get("/" + functions.config().env.bot_token, (req, res) => {
 	});
 });
 
-app.post("/" + functions.config().env.bot_token + "/manage", (req, res) => {
+app.post("/" + functions.config().env.api_token + "/manage", (req, res) => {
 
 	if (!req.body.message) {
 		console.info("Update object is not defined", req.body);

@@ -1,5 +1,5 @@
 {
-  "name": "airdropx-firebase",
+  "name": "airdropx-bot",
   "version": "0.1.0",
   "description": "Telegram Bot backend",
   "main": "index.js",
@@ -8,11 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/PaulRBerg/airdropx-bot-backend.git"
+    "url": "git+ssh://git@github.com/PaulRBerg/airdropx.git"
   },
   "keywords": [
     "aidropx",
-    "airdrop",
+    "airdrops",
     "ethereum",
     "telegram",
     "firebase"
@@ -20,9 +20,9 @@
   "author": "Paul Berg <hello@paulrberg.com> (https://paulrberg.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/PaulRBerg/airdropx-bot-backend/issues"
+    "url": "https://github.com/PaulRBerg/airdropx/issues"
   },
-  "homepage": "https://github.com/PaulRBerg/airdropx-bot-backend#readme",
+  "homepage": "https://github.com/PaulRBerg/airdropx#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-plugin-transform-async-to-bluebird": "^1.1.1",
